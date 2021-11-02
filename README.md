@@ -26,3 +26,4 @@ SportsStoreMVCWebAPI
 -01Logging
 -02DAL
 -03MVCStart
+-04ProductController
