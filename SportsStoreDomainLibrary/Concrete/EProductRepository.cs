@@ -17,7 +17,7 @@ namespace SportsStoreDomainLibrary.Concrete
     {
       _context = new SportsStoreDbContext();
     }
-    public IEnumerable<Product> Products => _context.Products;
+    public IEnumerable<Product> Products => _context.Products.ToList();
 
     public Product AddProduct(Product product)
     {

@@ -5,6 +5,7 @@ using System.Web.Routing;
 
 using LoggingLibrary;
 using SportsStoreDomainLibrary.Abstract;
+using SportsStoreDomainLibrary.Concrete;
 using SportsStoreMVCWenApp.Infrastructure;
 
 namespace SportsStoreMVCWenApp.Infrastructure
@@ -30,7 +31,8 @@ namespace SportsStoreMVCWenApp.Infrastructure
     {
       //Map the Interface with the class to be initiliazed in the controller
       _container.RegisterType<ILogger, Logger>();
-      _container.RegisterType<IProductRepository, MockProduct>();
+      //_container.RegisterType<IProductRepository, MockProduct>();
+      _container.RegisterType<IProductRepository, EProductRepository>();
 
     }
   }

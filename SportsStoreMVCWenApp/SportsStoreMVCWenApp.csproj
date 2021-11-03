@@ -181,6 +181,11 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="DataContexts\ApplicationDbContext.cs" />
+    <Compile Include="DataContexts\SportsStoreMigrations\202111030714448_InitialCreate.cs" />
+    <Compile Include="DataContexts\SportsStoreMigrations\202111030714448_InitialCreate.Designer.cs">
+      <DependentUpon>202111030714448_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\SportsStoreMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -284,6 +289,11 @@
       <Project>{faea0929-c30b-441d-8d6b-d7ec51dd3c76}</Project>
       <Name>SportsStoreDomainLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataContexts\SportsStoreMigrations\202111030714448_InitialCreate.resx">
+      <DependentUpon>202111030714448_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

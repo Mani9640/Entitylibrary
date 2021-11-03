@@ -13,13 +13,24 @@ SportsStoreMVCWebAPI
 -Ninject
 -StructureMap
 
-#### Pacakages for the Project
+#### Packages for the Project
 -Install-Package Unity
 -Install-Package Fontawesome
 -Install-Package EntityFramework(for SportsStoreMVCWebApp)
 
 #### EntityFramework (Code First)
 -Commands
+   -EntityFramework\Enable-Migrations: will create the Configuration.cs class with mapping  
+    to the 'DbContext Class' and provide a 'Seed' Method
+      -EntityFramework\Enable-Migrations -ContextTypeName 
+       SportsStoreDomainLibrary.SportsStoreDbContext 
+       - MigrationsDirectory DataContexts\SportsStoreMigrations -ContextProjectName SportsStoreDomainLibrary
+   -EntityFramework\Add-Migration: Will create the class with the structure
+    and constraints for the EntityClass for the Database
+       -EntityFramework\Add-Migration -ConfigurationTypeName
+       SportsStoreMVCWenApp.DataContexts.SportsStoreMigrations.Configuration 
+       "InitialCreate"
+   
  
 
 ### Git Branches
