@@ -27,5 +27,6 @@ SportsStoreMVCWebAPI
 -02DAL
 -03MVCStart
 -04ProductController
--05Pagination
--06ViewModel
+-05EFDatabase
+-06Pagination
+-07ViewModel

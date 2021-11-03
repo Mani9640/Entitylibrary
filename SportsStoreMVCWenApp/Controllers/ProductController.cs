@@ -18,9 +18,10 @@ namespace SportsStoreMVCWenApp.Controllers
     }
         public ActionResult List()
         {
+      
+          var productList = _productRepository.Products;
+         _logger.LogMessage("ProductionController", "List", TimeSpan.Zero, $"Get all Products  from repository");
 
-      var productList = _productRepository.Products;
-      _logger.LogMessage("ProductionController", "List", TimeSpan.Zero, $"Get all Products  from repository");
             return View(productList);
         }
     }
