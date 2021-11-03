@@ -3,6 +3,8 @@ using System.Web.Mvc;
 using SportsStoreDomainLibrary.Abstract;
 using LoggingLibrary;
 using System.Linq;
+using SportsStoreMVCWenApp.Models;
+using SportsStoreMVCWenApp.Infrastructure;
 
 namespace SportsStoreMVCWenApp.Controllers
 {
@@ -21,14 +23,32 @@ namespace SportsStoreMVCWenApp.Controllers
     }
         public ActionResult List( int page=1)
 
-    { 
-       var productList = _productRepository.Products.OrderBy(p=>p.ProductId).Skip((page-1) *_pageSize).Take(_pageSize).ToList();
+    {
+      var productList = _productRepository.Products.OrderBy(p => p.ProductId);
 
-       
-    //_logger.LogMessage("ProductionController", "List", TimeSpan.Zero, $"Get all Products  from repository");
-    // To the view only one object can be passed  all others are string
-      return View(productList);
-       
+
+      var productsListViewModels = new ProductsListViewModels
+      {
+        Products = productList.Skip((page - 1) * _pageSize).Take(_pageSize).ToList(),
+        GPager = new GPager(productList.Count(), page, _pageSize)
+
+      };
+      return View(productsListViewModels);
+
+
+
+
+
+      #region RawPaging
+
+      //var productList = _productRepository.Products.OrderBy(p=>p.ProductId).Skip((page-1) *_pageSize).Take(_pageSize).ToList();
+
+
+      //_logger.LogMessage("ProductionController", "List", TimeSpan.Zero, $"Get all Products  from repository");
+      // To the view only one object can be passed  all others are string 
+      #endregion
+
+
       #region Withoutpaging
 
       //var productList = _productRepository.Products;

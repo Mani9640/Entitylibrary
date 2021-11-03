@@ -46,3 +46,4 @@ SportsStoreMVCWebAPI
 -05EFDatabase
 -06Pagination
 -07ViewModels
+-08PagingUI
