@@ -30,6 +30,11 @@ SportsStoreMVCWebAPI
        -EntityFramework\Add-Migration -ConfigurationTypeName
        SportsStoreMVCWenApp.DataContexts.SportsStoreMigrations.Configuration 
        "InitialCreate"
+    -EntityFramework\Update-database: will create the database
+     if does not exists else update it ,it will add records
+    from the seed method if they do not exists
+    -EntityFramework\Update-Database -ConfigurationTypeName SportsStoreMVCWenApp.DataContexts.
+    SportsStoreMigrations.Configuration -verbose
    
  
 
@@ -40,4 +45,4 @@ SportsStoreMVCWebAPI
 -04ProductController
 -05EFDatabase
 -06Pagination
--07ViewModel
+-07ViewModels

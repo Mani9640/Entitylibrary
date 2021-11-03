@@ -12,8 +12,12 @@ namespace SportsStoreMVCWenApp
     public static void RegisterRoutes(RouteCollection routes)
     {
       routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
-
+      // https://localhost:44320/product/List/page1
+      routes.MapRoute(
+        name: "page",
+        url: "Page{page}",
+        defaults: new { controller = "Product", action = "List" },
+        constraints: new { page = @"\d+" });
       routes.MapRoute(
           name: "Default",
           url: "{controller}/{action}/{id}",
