@@ -11,6 +11,7 @@ namespace LoggingLibrary
     {
       string str = $"-----------------------------------------------------" + $"\n\tComponentName:{componentName},Action:{action},TimeSpan:{timeSpan} and Message:{message}\n" + "---------------------------";
       Debug.WriteLine(str);
+      Trace.WriteLine(str);
     }
   }
 }

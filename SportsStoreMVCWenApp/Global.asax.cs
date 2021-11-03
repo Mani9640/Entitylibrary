@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
+using Unity;
+
 namespace SportsStoreMVCWenApp
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -16,6 +18,9 @@ namespace SportsStoreMVCWenApp
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+      //IUnityContainer container = new UnityContainer();
+      ControllerBuilder.Current.SetControllerFactory(new SportsStoreMVCWenApp.Infrastructure.SportsUnityControllerFactory());
         }
     }
 }
