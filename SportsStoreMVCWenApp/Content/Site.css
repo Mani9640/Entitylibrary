@@ -2,6 +2,12 @@
     padding-top: 50px;
     padding-bottom: 20px;
 }
+.bg-purple{
+    background-color:mediumpurple;
+}
+.textWhite{
+    color:white;
+}
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
