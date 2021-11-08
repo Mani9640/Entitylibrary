@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStoreDomainLibrary", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStoreMVCWenApp", "SportsStoreMVCWenApp\SportsStoreMVCWenApp.csproj", "{322026A9-9B4C-4A21-A5FF-D7071163B7FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStoreMVCWebAPI", "SportsStoreMVCWebAPI\SportsStoreMVCWebAPI.csproj", "{4D21CC7B-9F48-4E9D-B82F-E5A0B81A4FCF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{322026A9-9B4C-4A21-A5FF-D7071163B7FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{322026A9-9B4C-4A21-A5FF-D7071163B7FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{322026A9-9B4C-4A21-A5FF-D7071163B7FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D21CC7B-9F48-4E9D-B82F-E5A0B81A4FCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D21CC7B-9F48-4E9D-B82F-E5A0B81A4FCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D21CC7B-9F48-4E9D-B82F-E5A0B81A4FCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D21CC7B-9F48-4E9D-B82F-E5A0B81A4FCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
