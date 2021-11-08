@@ -12,20 +12,22 @@ namespace SportsStoreMVCWenApp
     public static void RegisterRoutes(RouteCollection routes)
     {
       routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-      // https://localhost:44320/product/List/page1or2or3
+
+      //https://localhost:44320/Soccer/List/Page1orpage2or3
+      routes.MapRoute("categorypage","{category}/Page{page}", new{ controller="Product", action = "List" }, new { page = @"\d+" });
+
+
+      // https://localhost:44320/Product/List/page1or2or3
       routes.MapRoute(
         name: "page",
         url: "Page{page}",
         defaults: new { controller = "Product", action = "List" },
         constraints: new { page = @"\d+" });
 
-      routes.MapRoute("categorypage", "{category}/Page{page}", new
-      {
-        controller =
-        "Product",
-        action = "List",
-      }, new { page = @"\d+" });
 
+
+
+      // https://localhost:44320/Soccer
       routes.MapRoute("category", "{category}", new
       {
         controller =
