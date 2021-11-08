@@ -5,6 +5,8 @@ using LoggingLibrary;
 using System.Linq;
 using SportsStoreMVCWenApp.Models;
 using SportsStoreMVCWenApp.Infrastructure;
+using SportsStoreDomainLibrary.Concrete;
+using SportsStoreDomainLibrary.Abstract;
 
 namespace SportsStoreMVCWenApp.Controllers
 {
@@ -17,14 +19,17 @@ namespace SportsStoreMVCWenApp.Controllers
     private int _pageSize;
     public ProductController(IProductRepository productRepository,ILogger logger)
     {
+     
       _productRepository = productRepository;
       _logger = logger;
       _pageSize = 4;
     }
-        public ActionResult List( int page=1)
+        public ActionResult List(string category, int page=1)
 
     {
-      var productList = _productRepository.Products.OrderBy(p => p.ProductId);
+      ViewBag.currentCategory = category;
+
+      var productList = _productRepository.Products.Where(p => category == null ? true : p.Category==category).OrderBy(p => p.ProductId);
 
 
       var productsListViewModels = new ProductsListViewModels
@@ -34,9 +39,19 @@ namespace SportsStoreMVCWenApp.Controllers
 
       };
       return View(productsListViewModels);
+      #region Without Category
+
+      //var productList = _productRepository.Products.OrderBy(p => p.ProductId);
 
 
+      //var productsListViewModels = new ProductsListViewModels
+      //{
+      //  Products = productList.Skip((page - 1) * _pageSize).Take(_pageSize).ToList(),
+      //  GPager = new GPager(productList.Count(), page, _pageSize)
 
+      //};
+      //return View(productsListViewModels); 
+      #endregion
 
 
       #region RawPaging
