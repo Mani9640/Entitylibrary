@@ -49,3 +49,4 @@ SportsStoreMVCWebAPI
 -08PagingUI
 -09NavCategory
 -10Cart
+-11Admin
