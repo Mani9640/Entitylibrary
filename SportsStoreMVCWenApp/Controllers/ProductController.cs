@@ -1,12 +1,9 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using SportsStoreDomainLibrary.Abstract;
 using LoggingLibrary;
 using System.Linq;
 using SportsStoreMVCWenApp.Models;
 using SportsStoreMVCWenApp.Infrastructure;
-using SportsStoreDomainLibrary.Concrete;
-using SportsStoreDomainLibrary.Abstract;
 
 namespace SportsStoreMVCWenApp.Controllers
 {
